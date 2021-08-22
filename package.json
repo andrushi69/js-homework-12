@@ -1,0 +1,28 @@
+{
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "name": "js-homework-12",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html --public-url /js-homework-12/",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndrewGalkin/js-homework-12.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndrewGalkin/js-homework-12/issues"
+  },
+  "homepage": "https://github.com/AndrewGalkin/js-homework-12",
+  "dependencies": {
+    "gh-pages": "^3.2.3"
+  }
+}
