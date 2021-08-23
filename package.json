@@ -1,12 +1,15 @@
 {
   "devDependencies": {
-    "parcel-bundler": "^1.12.5"
+    "@pnotify/animate": "^5.2.0",
+    "@pnotify/core": "^5.2.0",
+    "parcel-bundler": "^1.12.5",
+    "pnotify": "^5.2.0"
   },
   "name": "js-homework-12",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel index.html",
+    "dev": "parcel index.html -p 9999",
     "build": "parcel build index.html --public-url /js-homework-12/",
     "deploy": "gh-pages -d dist",
     "predeploy": "npm run build"
@@ -23,6 +26,11 @@
   },
   "homepage": "https://github.com/AndrewGalkin/js-homework-12",
   "dependencies": {
-    "gh-pages": "^3.2.3"
+    "@pnotify/mobile": "^5.2.0",
+    "gh-pages": "^3.2.3",
+    "js": "^0.1.0",
+    "lodash.debounce": "^4.0.8",
+    "parcel-plugin-handlebars-precompile": "^1.0.2",
+    "templates": "^1.2.9"
   }
 }
