@@ -7,7 +7,7 @@
   },
   "name": "js-homework-12",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "fetchCountries.js",
   "scripts": {
     "dev": "parcel index.html -p 9999",
     "build": "parcel build index.html --public-url /js-homework-12/",
