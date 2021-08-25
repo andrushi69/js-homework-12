@@ -2802,21 +2802,21 @@ var refs = {
   mainSearchForm: document.querySelector(".form-inline"),
   mainSearchInput: document.querySelector(".form-control"),
   countriesContent: document.querySelector(".articles")
-};
-refs.mainSearchInput.addEventListener("change", (0, _lodash.default)(countrySearchInput, 500));
+}; // refs.mainSearchInput.addEventListener("change", debounce(countrySearchInput, 500))
 
-function countrySearchInput(event) {
-  event.preventDefault();
+refs.mainSearchInput.oninput = (0, _lodash.default)(function (event) {
   clearCountriesContent();
   var searchTypes = event.target.value;
   fetchCountries(searchTypes).then(function (data) {
     if (data.length > 10) {
       (0, _core.error)({
-        text: "Too many matches found. Please enter a more specific query!"
+        text: "Too many matches found. Please enter a more specific query!",
+        delay: 1000
       });
     } else if (data.status === 404) {
       (0, _core.error)({
-        text: "No country has been found. Please enter a more specific query!"
+        text: "No country has been found. Please enter a more specific query!",
+        delay: 1500
       });
     } else if (data.length === 1) {
       findCountry(data, _country.default);
@@ -2828,7 +2828,32 @@ function countrySearchInput(event) {
       text: "You must enter query parameters!"
     });
   });
-}
+}, 500); // function countrySearchInput(event) {
+//   event.preventDefault();
+//   clearCountriesContent();
+//   const searchTypes = event.target.value;
+//
+//   fetchCountries(searchTypes).then(data => {
+//     if (data.length > 10) {
+//       error({
+//         text: "Too many matches found. Please enter a more specific query!"
+//       });
+//     } else if (data.status === 404) {
+//       error({
+//         text: "No country has been found. Please enter a more specific query!"
+//       });
+//     } else if (data.length === 1) {
+//       findCountry(data, country);
+//     } else if (data.length <= 10) {
+//       findCountry(data, countries);
+//     }
+//   })
+//     .catch(error => {
+//       error({
+//         text: "You must enter query parameters!"
+//       });
+//     })
+// }, 500)
 
 function findCountry(countries, template) {
   var markup = countries.map(function (count) {
@@ -2868,7 +2893,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54316" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59078" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
