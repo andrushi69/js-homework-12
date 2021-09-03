@@ -2828,37 +2828,12 @@ refs.mainSearchInput.oninput = (0, _lodash.default)(function (event) {
       text: "You must enter query parameters!"
     });
   });
-}, 500); // function countrySearchInput(event) {
-//   event.preventDefault();
-//   clearCountriesContent();
-//   const searchTypes = event.target.value;
-//
-//   fetchCountries(searchTypes).then(data => {
-//     if (data.length > 10) {
-//       error({
-//         text: "Too many matches found. Please enter a more specific query!"
-//       });
-//     } else if (data.status === 404) {
-//       error({
-//         text: "No country has been found. Please enter a more specific query!"
-//       });
-//     } else if (data.length === 1) {
-//       findCountry(data, country);
-//     } else if (data.length <= 10) {
-//       findCountry(data, countries);
-//     }
-//   })
-//     .catch(error => {
-//       error({
-//         text: "You must enter query parameters!"
-//       });
-//     })
-// }, 500)
+}, 500);
 
 function findCountry(countries, template) {
   var markup = countries.map(function (count) {
     return template(count);
-  }).join();
+  }).join("");
   refs.countriesContent.insertAdjacentHTML('afterbegin', markup);
 }
 
@@ -2893,7 +2868,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59078" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63831" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
